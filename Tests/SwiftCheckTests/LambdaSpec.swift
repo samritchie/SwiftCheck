@@ -23,14 +23,6 @@ struct Name : Arbitrary, Equatable, Hashable, CustomStringConvertible {
 	var description : String {
 		return self.unName
 	}
-
-	var hashValue : Int {
-		return self.unName.hashValue
-	}
-
-	static func == (l : Name, r : Name) -> Bool {
-		return l.unName == r.unName
-	}
 }
 
 private func liftM2<A, B, C>(_ f : @escaping (A, B) -> C, _ m1 : Gen<A>, _ m2 : Gen<B>) -> Gen<C> {
